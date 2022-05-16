@@ -1,5 +1,5 @@
 package com.hopital.patientms.controller;
 
-public class SéjourController {
+public class SejourController {
 
 }

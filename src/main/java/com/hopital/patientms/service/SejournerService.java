@@ -1,5 +1,5 @@
 package com.hopital.patientms.service;
 
-public class SéjournerService {
+public class SejournerService {
 
 }

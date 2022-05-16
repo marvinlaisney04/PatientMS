@@ -1,5 +1,5 @@
 package com.hopital.patientms.model;
 
-public class Séjour {
+public class Sejourner {
 
 }
