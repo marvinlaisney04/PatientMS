@@ -1,6 +1,8 @@
 package com.hopital.patientms.controller;
 
 import java.util.List;
+import java.util.Optional;
+
 import com.hopital.patientms.model.Patient;
 import com.hopital.patientms.repository.PatientRepository;
 
@@ -23,7 +25,7 @@ public class PatientController {
     }
 
     @GetMapping("/patient/{id}")
-    public Patient getPatientById(@PathVariable("id") long id){
-        return this.patientRepo.getById(id);
+    public Optional<Patient> getPatientById(@PathVariable("id") Long id){
+        return this.patientRepo.findById(id);
     }
 }
