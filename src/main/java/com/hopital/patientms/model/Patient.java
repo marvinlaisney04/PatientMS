@@ -1,6 +1,8 @@
 package com.hopital.patientms.model;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,11 +35,14 @@ public class Patient implements Serializable {
 	
 	@Column(name = "age")
 	private Long age;
+
+    @Column(name = "date_naissance")
+	private Date dateNaissance;
 	
 	@Column(name = "numero_secu")
 	private Long numSecu;
 
-    public Patient(Long id, String name, String prenom, String telephone, String adresse, String sexe, Long age,
+    public Patient(Long id, String name, String prenom, String telephone, String adresse, String sexe, Long age, Date dateNaissance,
             Long numSecu) {
         this.id = id;
         this.name = name;
@@ -46,6 +51,7 @@ public class Patient implements Serializable {
         this.adresse = adresse;
         this.sexe = sexe;
         this.age = age;
+        this.dateNaissance = dateNaissance;
         this.numSecu = numSecu;
     }
 
@@ -103,6 +109,14 @@ public class Patient implements Serializable {
 
     public Long getAge() {
         return age;
+    }
+
+    public Date getDateNaissance() {
+        return dateNaissance;
+    }
+
+    public void setDateNaissance(Date dateNaissance) {
+        this.dateNaissance = dateNaissance;
     }
 
     public void setAge(Long age) {
