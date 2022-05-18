@@ -19,7 +19,7 @@ public class Patient implements Serializable {
 	private Long id;
 	
 	@Column(name = "nom")
-	private String name;
+	private String nom;
 	
 	@Column(name = "prenom")
 	private String prenom;
@@ -45,10 +45,10 @@ public class Patient implements Serializable {
 	@Column(name = "numero_secu")
 	private Long numSecu;
 
-    public Patient(Long id, String name, String prenom, String telephone, String adresse, String codePostal, String ville, String sexe, Date dateNaissance,
+    public Patient(Long id, String nom, String prenom, String telephone, String adresse, String codePostal, String ville, String sexe, Date dateNaissance,
             Long numSecu) {
         this.id = id;
-        this.name = name;
+        this.nom = nom;
         this.prenom = prenom;
         this.telephone = telephone;
         this.adresse = adresse;
@@ -71,12 +71,12 @@ public class Patient implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNom() {
+        return nom;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getPrenom() {
