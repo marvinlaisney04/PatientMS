@@ -15,18 +15,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/api")
+@RequestMapping("/api/patients")
 public class PatientController {
 
     @Autowired
     private PatientRepository patientRepo;
 
-    @GetMapping("/patient")
+    @GetMapping("/")
     public List<Patient> getAllPatient(){
         return this.patientRepo.findAll();
     }
 
-    @GetMapping("/patient/{id}")
+    @GetMapping("/{id}")
     public Optional<Patient> getPatientById(@PathVariable("id") Long id){
         return this.patientRepo.findById(id);
     }

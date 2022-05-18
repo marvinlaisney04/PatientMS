@@ -38,9 +38,6 @@ public class Patient implements Serializable {
 	
 	@Column(name = "sexe")
 	private String sexe;
-	
-	@Column(name = "age")
-	private Long age;
 
     @Column(name = "date_naissance")
 	private Date dateNaissance;
@@ -48,7 +45,7 @@ public class Patient implements Serializable {
 	@Column(name = "numero_secu")
 	private Long numSecu;
 
-    public Patient(Long id, String name, String prenom, String telephone, String adresse, String codePostal, String ville, String sexe, Long age, Date dateNaissance,
+    public Patient(Long id, String name, String prenom, String telephone, String adresse, String codePostal, String ville, String sexe, Date dateNaissance,
             Long numSecu) {
         this.id = id;
         this.name = name;
@@ -58,7 +55,6 @@ public class Patient implements Serializable {
         this.codePostal = codePostal;
         this.ville = ville;
         this.sexe = sexe;
-        this.age = age;
         this.dateNaissance = dateNaissance;
         this.numSecu = numSecu;
     }
@@ -131,20 +127,12 @@ public class Patient implements Serializable {
         this.sexe = sexe;
     }
 
-    public Long getAge() {
-        return age;
-    }
-
     public Date getDateNaissance() {
         return dateNaissance;
     }
 
     public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
-    }
-
-    public void setAge(Long age) {
-        this.age = age;
     }
 
     public Long getNumSecu() {
