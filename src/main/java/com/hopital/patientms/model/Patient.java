@@ -29,6 +29,12 @@ public class Patient implements Serializable {
 	
 	@Column(name = "adresse")
 	private String adresse;
+
+    @Column(name = "code_postal")
+	private String codePostal;
+
+    @Column(name = "ville")
+	private String ville;
 	
 	@Column(name = "sexe")
 	private String sexe;
@@ -42,13 +48,15 @@ public class Patient implements Serializable {
 	@Column(name = "numero_secu")
 	private Long numSecu;
 
-    public Patient(Long id, String name, String prenom, String telephone, String adresse, String sexe, Long age, Date dateNaissance,
+    public Patient(Long id, String name, String prenom, String telephone, String adresse, String codePostal, String ville, String sexe, Long age, Date dateNaissance,
             Long numSecu) {
         this.id = id;
         this.name = name;
         this.prenom = prenom;
         this.telephone = telephone;
         this.adresse = adresse;
+        this.codePostal = codePostal;
+        this.ville = ville;
         this.sexe = sexe;
         this.age = age;
         this.dateNaissance = dateNaissance;
@@ -97,6 +105,22 @@ public class Patient implements Serializable {
 
     public void setAdresse(String adresse) {
         this.adresse = adresse;
+    }
+
+    public String getCodePostal() {
+        return codePostal;
+    }
+
+    public void setCodePostal(String codePostal) {
+        this.codePostal = codePostal;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 
     public String getSexe() {
