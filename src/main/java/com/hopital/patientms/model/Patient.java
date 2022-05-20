@@ -45,8 +45,11 @@ public class Patient implements Serializable {
 	@Column(name = "numero_secu")
 	private Long numSecu;
 
+    @Column(name = "actif")
+    private boolean actif;
+
     public Patient(Long id, String nom, String prenom, String telephone, String adresse, String codePostal, String ville, String sexe, Date dateNaissance,
-            Long numSecu) {
+            Long numSecu, boolean actif) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -57,6 +60,7 @@ public class Patient implements Serializable {
         this.sexe = sexe;
         this.dateNaissance = dateNaissance;
         this.numSecu = numSecu;
+        this.actif = actif;
     }
 
     public Patient() {
@@ -142,4 +146,13 @@ public class Patient implements Serializable {
     public void setNumSecu(Long numSecu) {
         this.numSecu = numSecu;
     }
+
+    public boolean isActif() {
+        return actif;
+    }
+
+    public void setActif(boolean actif) {
+        this.actif = actif;
+    }
+
 }
