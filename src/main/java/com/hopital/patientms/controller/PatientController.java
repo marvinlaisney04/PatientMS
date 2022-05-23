@@ -39,10 +39,15 @@ public class PatientController {
         return this.patientRepo.findById(id);
     }
 
-    // @PostMapping("/")
-    // public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {
-    // ...
-    // }
+    @PostMapping("/")
+    public ResponseEntity<Map<String, Boolean>> createPatient(@RequestBody Patient patient) {
+        this.patientRepo.save(patient);
+
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("created", Boolean.TRUE);
+
+        return ResponseEntity.ok(response);
+    }
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Patient> updatePatient(@PathVariable("id") long id, @RequestBody Patient patientDetails) {
